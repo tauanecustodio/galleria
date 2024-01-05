@@ -1,0 +1,33 @@
+@import './variables';
+
+@mixin container {
+    max-width: $container-width;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin bg-img ($img) {
+    background-image: url('../imagens/#{$img}');
+
+    &:hover {
+        background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('../imagens/#{$img}');
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 650px) {
+        @content;
+    }
+}
